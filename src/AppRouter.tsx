@@ -1,22 +1,22 @@
-import {
-    Route, Routes
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MainLayout from "./Layout/Main";
 import Home from "./pages";
+import { Authenticate } from "./pages/Authenticate";
 
 export const AppRouter = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<MainLayout />} >
-                <Route index element={<Home />} />
-                <Route path="food/:id" element={<h1>fsldfkjaslf lskjdflksjflsjflasjdfks</h1>}/>
-            </Route>
-        </Routes>
-    )
-}
-
-
-
+  return (
+    <Routes>
+      <Route path="/login" element={<Authenticate />} />
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route
+          path="food/:id"
+          element={<h1>fsldfkjaslf lskjdflksjflsjflasjdfks</h1>}
+        />
+      </Route>
+    </Routes>
+  );
+};
 
 // return useRoutes([
 //     {
