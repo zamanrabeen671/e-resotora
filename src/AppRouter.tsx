@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import MainLayout from "./Layout/Main";
 import Home from "./pages";
 import { Authenticate } from "./pages/Authenticate";
+import SingleProduct from "./pages/singleProduct";
 
 export const AppRouter = () => {
   return (
@@ -9,10 +10,7 @@ export const AppRouter = () => {
       <Route path="/login" element={<Authenticate />} />
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route
-          path="food/:id"
-          element={<h1>fsldfkjaslf lskjdflksjflsjflasjdfks</h1>}
-        />
+        <Route path="food/:id" element={<SingleProduct />} />
       </Route>
     </Routes>
   );
