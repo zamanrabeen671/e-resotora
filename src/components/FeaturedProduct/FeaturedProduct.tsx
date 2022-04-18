@@ -1,44 +1,18 @@
 import React from "react";
+import { IProductTypes } from "../../types/productTypes";
 
-const food = [
-  {
-    name: "Burger",
-    price: 1022,
-    description: "lorem lorem lorem lorem lorem lorem lorem",
-    category: "fast-food",
-    img: "https://wallpaperaccess.com/full/1184214.jpg",
-  },
-  {
-    name: "Burger",
-    price: 1022,
-    description: "lorem lorem lorem lorem lorem lorem lorem",
-    category: "fast-food",
-    img: "https://besthqwallpapers.com/Uploads/8-8-2018/60879/thumb2-4k-hamburger-close-up-fastfood-cutlets.jpg",
-  },
-  {
-    name: "Pizza",
-    price: 1022,
-    description: "lorem lorem lorem lorem lorem lorem lorem",
-    category: "fast-food",
-    img: "https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939__340.jpg",
-  },
-  {
-    name: "Delicious Pizza",
-    price: 1022,
-    description: "lorem lorem lorem lorem lorem lorem lorem",
-    category: "fast-food",
-    img: "https://images7.alphacoders.com/596/thumb-1920-596343.jpg",
-  },
-];
+interface IProductProps {
+  products: IProductTypes[];
+}
 
-export const FeaturedProduct = () => {
+export const FeaturedProduct: React.FC<IProductProps> = ({ products }) => {
   return (
     <div className="grid grid-cols-4 gap-4">
-      {food.map((item, index) => {
+      {products.map((item, index) => {
         return (
-          <div className="card bg-slate-700 shadow-xl" key={index}>
+          <div className="card bg-slate-700 shadow-xl" key={item.id}>
             <figure>
-              <img src={item.img} alt="Shoes" />
+              <img src={item.productImage} alt="Shoes" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
