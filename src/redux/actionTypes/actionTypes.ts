@@ -1,2 +1,2 @@
-export const ADD_BOOK = "ADD_BOOK";
-export const REMOVE_BOOK = "REMOVE_BOOK";
+export const ADD_FOOD = "ADD_FOOD";
+export const GET_ALL_FOOD = "GET_ALL_FOOD";
